@@ -10,6 +10,6 @@ import org.junit.platform.suite.api.Suite;
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = "cucumber.glue", value = "ilcarro.stepDefinitions")
 @ConfigurationParameter(key = "cucumber.plugin", value = "html:target/cucumber-reports.html, json:target/cucumber-reports.json")
-@ConfigurationParameter(key = "cucumber.filter.tags", value = "@Login")
+@ConfigurationParameter(key = "cucumber.filter.tags", value = "@AddCar")
 public class TestRunner {
 }

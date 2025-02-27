@@ -8,6 +8,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
 
@@ -17,11 +18,12 @@ public class LoginPage {
     }
 
     public void clickOnYallaButton() {
-       $(byXpath("//button[.='Y’alla!']")).click();
+        $(byXpath("//button[.='Y’alla!']")).click();
     }
 
     public void verifyTextMessage(String textToCheck) {
         $(".message").shouldHave(text(textToCheck));
+        $(byXpath("//button[contains(text(),'Ok')]")).click();
     }
 
     public void enterCredentials(DataTable table) {

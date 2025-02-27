@@ -1,16 +1,16 @@
 package ilcarro.pages;
 
-import ilcarro.core.BasePage;
+
+import ilcarro.utils.PropertiesLoader;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class HomePage{
-
+public static String baseURL = PropertiesLoader.loadProperty("url");
     public void openHomePage() {
-        open("https://ilcarro.web.app/");
+        open(baseURL);
     }
 
     public boolean isHomePageTitlePresent() {
@@ -19,5 +19,10 @@ public class HomePage{
 
     public void clickOnLoginLink() {
          $(byXpath("//a[.=' Log in ']")).click();
+    }
+
+    public void clickOnLetTheCarWorkLink() {
+        $(byXpath("//a[.=' Let the car work ']")).click();
+        //$x("//a[.=' Let the car work ']").click();
     }
 }

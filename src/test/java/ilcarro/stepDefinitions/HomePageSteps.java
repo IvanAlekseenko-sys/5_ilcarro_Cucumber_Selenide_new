@@ -34,4 +34,9 @@ public class HomePageSteps {
     public void userClickOnLoginLink() {
         new HomePage().clickOnLoginLink();
     }
+
+    @And("Пользователь нажимает на кнопку Let the car work")
+    public void userClickOnLetTheCarWorkLink() {
+        new HomePage().clickOnLetTheCarWorkLink();
+    }
 }
