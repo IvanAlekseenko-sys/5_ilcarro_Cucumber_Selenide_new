@@ -1,13 +1,16 @@
 package ilcarro.stepDefinitions;
 
 import ilcarro.pages.LoginPage;
+import ilcarro.utils.PropertiesLoader;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 public class LoginPageSteps {
+    public static String VALID_EMAIL = PropertiesLoader.loadProperty("valid.email");
+    public static String VALID_PASSWORD = PropertiesLoader.loadProperty("valid.password");
     @And("Пользователь вводит валидные данные")
     public void userEnterValidCredentials() {
-        new LoginPage().enterCredentials("test_qa@gmail.com", "Password@1");
+        new LoginPage().enterCredentials(VALID_EMAIL, VALID_PASSWORD);
     }
 
     @And("Пользователь нажимает на кнопку Yalla")

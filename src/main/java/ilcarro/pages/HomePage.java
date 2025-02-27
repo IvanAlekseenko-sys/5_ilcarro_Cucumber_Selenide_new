@@ -7,8 +7,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
-public class HomePage{
-public static String baseURL = PropertiesLoader.loadProperty("url");
+public class HomePage {
+    public static String baseURL = PropertiesLoader.loadProperty("url");
+
     public void openHomePage() {
         open(baseURL);
     }
@@ -18,7 +19,7 @@ public static String baseURL = PropertiesLoader.loadProperty("url");
     }
 
     public void clickOnLoginLink() {
-         $(byXpath("//a[.=' Log in ']")).click();
+        $(byXpath("//a[.=' Log in ']")).click();
     }
 
     public void clickOnLetTheCarWorkLink() {
