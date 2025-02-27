@@ -53,13 +53,15 @@ public class CarPage {
         $("#price").setValue(price);
         $("#about").setValue(about);
 
-//        $("#photos").setValue(photo);
+       $("#photos").setValue(photo);
 //        $("#photos").val(photo);
 //        $("#photos").append(photo);
-        File file = new File(photo);
-        System.out.println("Absolute file path: " + file.getAbsolutePath());
-        System.out.println("File exists: " + file.exists());
-        $("#photos").uploadFile(file);
+
+//        File file = new File(photo);
+//        System.out.println("Absolute file path: " + file.getAbsolutePath());
+//        System.out.println("File exists: " + file.exists());
+//        $("#photos").uploadFile(file);
+
         //$("#photos").uploadFile(new File(photo));
     }
 

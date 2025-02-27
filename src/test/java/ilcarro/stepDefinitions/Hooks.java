@@ -1,5 +1,6 @@
 package ilcarro.stepDefinitions;
 
+import com.codeborne.selenide.Selenide;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -10,14 +11,23 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        scenario.log("🎥 Начинаем запись видео: " + scenario.getName());
+        System.out.println("🎬 Запускаем тест: " + scenario.getName());
         videoRecorder.start();
     }
 
     @After
     public void afterScenario(Scenario scenario) {
-        String videoPath = String.valueOf(videoRecorder.videoUrl());
+        String videoPath = String.valueOf(videoRecorder.videoUrl().orElse(null));
         videoRecorder.finish();
-        scenario.log("🎥 Видео теста: " + videoPath);
+
+        if (scenario.isFailed()) {
+            System.out.println("❌ Тест упал: " + scenario.getName());
+            Selenide.screenshot("failed_test");
+            System.out.println("📸 Скриншот сохранён в reports/.");
+        } else {
+            System.out.println("✅ Тест пройден успешно: " + scenario.getName());
+        }
+
+        System.out.println("🎥 Видео теста: " + videoPath);
     }
 }

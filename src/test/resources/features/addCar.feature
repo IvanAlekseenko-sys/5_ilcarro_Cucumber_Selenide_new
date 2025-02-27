@@ -12,9 +12,9 @@ Feature: Добавление автомобиля
   Scenario: Успешное добавление автомобиля
     And Пользователь нажимает на кнопку Let the car work
     When Пользователь вводит данные автомобиля
-      | location | manufacture | model | year | fuel   | seats | classCar | price | about             | photo                                               |
-      | Haifa    | Trabant     | P50   | 1957 | Petrol | 4     | A        | 500   | Perfect condition | C:/Users/Ivan/Downloads/640px-Trabant_P50_front.jpg |
-      |          |             |       |      |        |       |          |       |                   |                                                     |
+      | location | manufacture | model | year | fuel   | seats | classCar | price | about             | photo                               |
+      | Haifa    | Trabant     | P50   | 1957 | Petrol | 4     | A        | 500   | Perfect condition | C:/Users/Ivan/Downloads/Trabant.jpg |
+      |          |             |       |      |        |       |          |       |                   |                                     |
     And Пользователь нажимает кнопку Submit
     Then Пользователь проверяет сообщение "Trabant P50 added successful"
     And Пользователь закрывает браузер
