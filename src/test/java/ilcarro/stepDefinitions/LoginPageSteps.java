@@ -5,9 +5,12 @@ import ilcarro.utils.PropertiesLoader;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+
+import static ilcarro.pages.LoginPage.VALID_EMAIL;
+import static ilcarro.pages.LoginPage.VALID_PASSWORD;
+
 public class LoginPageSteps {
-    public static String VALID_EMAIL = PropertiesLoader.loadProperty("valid.email");
-    public static String VALID_PASSWORD = PropertiesLoader.loadProperty("valid.password");
+
     @And("Пользователь вводит валидные данные")
     public void userEnterValidCredentials() {
         new LoginPage().enterCredentials(VALID_EMAIL, VALID_PASSWORD);
@@ -35,7 +38,7 @@ public class LoginPageSteps {
 
     @And("Пользователь вводит валидные данные {string} и {string}")
     public void userEnterCredentials(String email, String password) {
-        new LoginPage().enterCredentials(email,password);
+        new LoginPage().enterCredentials(email, password);
     }
 
     @And("Пользователь вводит валидные данные email и password")

@@ -1,5 +1,6 @@
 package ilcarro.pages;
 
+import ilcarro.utils.PropertiesLoader;
 import io.cucumber.datatable.DataTable;
 
 import java.util.List;
@@ -11,7 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
-
+    public static String VALID_EMAIL = PropertiesLoader.loadProperty("valid.email");
+    public static String VALID_PASSWORD = PropertiesLoader.loadProperty("valid.password");
     public void enterCredentials(String email, String password) {
         $("#email").setValue(email);
         $("#password").setValue(password);
